@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class webDriverTest {
 
 	public static void main(String[] args) {
-		WebDriver driver = new FirefoxDriver();
+		
 
 	}
 

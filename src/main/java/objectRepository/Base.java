@@ -1,7 +1,6 @@
 package objectRepository;
 
-import io.appium.java_client.FindsByAndroidUIAutomator;
-import io.appium.java_client.MobileElement;
+
 import io.appium.java_client.android.AndroidDriver;
 import java.io.File;
 import java.io.IOException;
@@ -30,13 +29,18 @@ public class Base {
 
         File appDir = new File("src");
         File app = new File(appDir,AUTappName);
-	     DesiredCapabilities capabilities = new DesiredCapabilities();
+	     DesiredCapabilities dc = new DesiredCapabilities();
 	     
 	     //capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "");
-	     capabilities.setCapability(MobileCapabilityType.UDID, "b81bde2");
-	     capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jobget");
-	     capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-	    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+	     dc.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+	        dc.setCapability(MobileCapabilityType.UDID, "b81bde2");
+	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jobget");
+	        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".activities.SplashActivity");
+	     
+	     dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
+	     dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
+	     dc.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
+	    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
 	   
 	   return driver;
 	}
