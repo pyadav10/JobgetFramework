@@ -22,7 +22,7 @@ public class Base {
 	public static String AUTappName ="jobget_pre_prod_4_feb.apk";
 	
 	
-	public static  AndroidDriver<AndroidElement> capabilities(String appName) throws MalformedURLException
+	public static  AndroidDriver<AndroidElement> capabilities() throws MalformedURLException
 	{
 
 	
@@ -36,6 +36,7 @@ public class Base {
 	        dc.setCapability(MobileCapabilityType.UDID, "b81bde2");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jobget");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".activities.SplashActivity");
+	        dc.setCapability("autoGrantPermissions", true);//appium decides which permissiosn to grant
 	     
 	     dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
 	     dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
