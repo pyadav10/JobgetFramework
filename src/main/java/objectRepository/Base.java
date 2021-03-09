@@ -31,7 +31,7 @@ public class Base {
         File app = new File(appDir,AUTappName);
 	     DesiredCapabilities dc = new DesiredCapabilities();
 	     
-	     //capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "");
+	     
 	     dc.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 	        dc.setCapability(MobileCapabilityType.UDID, "b81bde2");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jobget");
