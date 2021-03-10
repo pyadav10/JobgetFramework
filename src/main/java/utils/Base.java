@@ -1,4 +1,4 @@
-package objectRepository;
+package utils;
 
 
 import io.appium.java_client.android.AndroidDriver;
@@ -33,7 +33,8 @@ public class Base {
 	     
 	     
 	     dc.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-	        dc.setCapability(MobileCapabilityType.UDID, "b81bde2");
+	        //dc.setCapability(MobileCapabilityType.UDID, "b81bde2");
+	        dc.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jobget");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".activities.SplashActivity");
 	        dc.setCapability("autoGrantPermissions", true);//appium decides which permissiosn to grant
