@@ -10,6 +10,7 @@ import java.net.URL;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.html5.Location;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -44,6 +45,8 @@ public class Base {
 	     dc.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
 	    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
 	   
+	    driver.setLocation(new Location(28.53, 77.39, 10));// to set geolocation to noida
+	    
 	   return driver;
 	}
 	
