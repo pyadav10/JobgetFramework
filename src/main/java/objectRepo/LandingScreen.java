@@ -24,7 +24,7 @@ public class LandingScreen {
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[contains(@resource-id,'com.jobget:id/tv_welcome') ]")
 	public WebElement welcomeText ;	
-	//com.jobget:id/tv_welcome
+	
 	
 	
 
