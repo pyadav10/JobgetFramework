@@ -42,7 +42,7 @@ public class Base {
 	     
 	     dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
 	     dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-	     dc.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
+	     dc.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,60);
 	    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), dc);
 	   
 	    driver.setLocation(new Location(28.53, 77.39, 10));// to set geolocation to noida

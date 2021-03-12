@@ -15,6 +15,21 @@ public class JobListingScreen {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 	
+	
+	//Elements from login screen 
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@resource-id,'com.jobget:id/tv_get_job') ]")
+	public WebElement getAJob ;
+	
+	@AndroidFindBy(xpath="//*[@text='Hire staff']")
+	public WebElement HireStaff ;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@resource-id,'com.jobget:id/tv_welcome') ]")
+	public WebElement welcomeText ;	
+	
+	// elements from listing screen
+	
+	
 	@AndroidFindBy(xpath="//android.widget.TextView[contains(@resource-id,'com.jobget:id/tv_login')  ]")
 	public WebElement loginButton ;
 	
