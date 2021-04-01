@@ -75,12 +75,5 @@ public class Base {
 			
 		} 
 		
-		public MobileElement scrollToElement(String Parent_resource, String Child_resource)
-		{
-			return (MobileElement) ((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
-					"new UiScrollable(new UiSelector()" + ".description(Parent_resource))"
-							+ ".scrollIntoView(" + "new UiSelector().description(Child_resource));");
-			
-		} 
 
 }
