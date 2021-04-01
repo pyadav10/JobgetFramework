@@ -32,6 +32,8 @@ public class TestDemo {
 		   cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,30);
 		AndroidDriver<AndroidElement> driver = new  AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),cap) ;
 		
+		
+		
 		driver.close();
 		
 

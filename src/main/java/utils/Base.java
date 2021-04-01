@@ -1,6 +1,9 @@
 package utils;
 
 
+import io.appium.java_client.FindsByAndroidUIAutomator;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +22,7 @@ import io.appium.java_client.remote.AndroidMobileCapabilityType;
 
 public class Base {
 	
-	static AndroidDriver<AndroidElement>  driver;
+	public static AndroidDriver<AndroidElement>  driver;
 	public static String AUTappName ="jobget_pre_prod_4_feb.apk";
 	
 	
@@ -39,6 +42,7 @@ public class Base {
 	        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.jobget");
 	        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".activities.SplashActivity");
 	        dc.setCapability("autoGrantPermissions", true);//appium decides which permissiosn to grant
+	        dc.setCapability("autoAcceptAlerts", true);// Auto Accept the Alerts you can also autodismiss alerts
 	     
 	     dc.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
 	     dc.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
@@ -59,12 +63,24 @@ public class Base {
 		}
 		
 		
-		/*public MobileElement scrollToElement(String Parent_resource, String Child_resource)
+		
+		public MobileElement scrollToElementNew(String Child_resource)
+		{
+			MobileElement listitem = (MobileElement) driver.findElement(
+					MobileBy.AndroidUIAutomator(
+							"new UiScrollable(new UiSelector()).scrollIntoView("
+					+ "new UiSelector().description(Child_resource)));"));
+			return listitem;
+					
+			
+		} 
+		
+		public MobileElement scrollToElement(String Parent_resource, String Child_resource)
 		{
 			return (MobileElement) ((FindsByAndroidUIAutomator) driver).findElementByAndroidUIAutomator(
 					"new UiScrollable(new UiSelector()" + ".description(Parent_resource))"
 							+ ".scrollIntoView(" + "new UiSelector().description(Child_resource));");
 			
-		} */
+		} 
 
 }

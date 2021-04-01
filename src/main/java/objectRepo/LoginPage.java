@@ -43,8 +43,21 @@ public class LoginPage {
 	@AndroidFindBy(xpath="//android.widget.TextView[contains(@resource-id,'com.jobget:id/tv_show_hide_password') ]")
 	public WebElement showHidePass ;
 	
-	@AndroidFindBy(xpath="//android.widget.TextView[ @text='Log in' ]")
-	public WebElement logiButton ;
+	@AndroidFindBy(xpath="//android.widget.TextView[ @text='Log in' or contains(@resource-id, 'com.jobget:id/tv_login') ]")
+	public WebElement loginButton ;
+	
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[ @text='Log in' or contains(@resource-id, 'com.jobget:id/tv_signup') ]")
+	public WebElement signUpLink ;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='Don't have an account?' ]")
+	public WebElement doNotAccountTextInfo ;
+	
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='' or contains(@resource-id, 'com.jobget:id/tv_forgot_password') ]")
+	public WebElement forgotPassword ;
+	
+	
 	
 	
 	
