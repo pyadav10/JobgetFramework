@@ -39,6 +39,7 @@ public class JobseekerLogin extends Base {
 		JobListingScreen act1 = new JobListingScreen(tc);
 		LoginPage act2 = new LoginPage(tc);
 		HomePage hm = new HomePage(tc);
+		Boolean ElementPresent=false;
 		
 	    tc.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    
@@ -52,24 +53,37 @@ public class JobseekerLogin extends Base {
 		act2.loginButton.click();
 		
 		
+		
 		Thread.sleep(10000);
 
 		hm.profileButtonInNavBar.click();	
 		hm.CoachmarkOKButton.click();
-		//hm.jobButtonInNavBar.click();
+		
 		tc.navigate().back();
 	
 		Thread.sleep(3000);
-		//tc.scrollTo
 		
 		
+		ElementPresent =hm.findJob.isDisplayed();
 		
-		 TouchAction swipe = new TouchAction(tc)
-	              .press(PointOption.point(540,1824))
-	              .waitAction(waitOptions(ofMillis(800)))
-	              .moveTo(PointOption.point(540,672))
-	              .release()
-	              .perform();
+		
+		for(int i=0;i>10;i++) {
+			
+			 TouchAction swipe = new TouchAction(tc)
+		              .press(PointOption.point(540,1824))
+		              .waitAction(waitOptions(ofMillis(800)))
+		              .moveTo(PointOption.point(540,672))
+		              .release()
+		              .perform();
+			 
+			 if (ElementPresent) {
+				 break;
+			 }
+			
+			
+		}
+		
+
 		
 		 
 		 System.out.println("Test ends");

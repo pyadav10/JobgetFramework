@@ -15,25 +15,34 @@ public class HomePage {
 	}
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Jobs' and contains(@resource-id,'com.jobget:id/largeLabel')]")
-	public WebElement jobButtonInNavBar ;
+	public AndroidElement jobButtonInNavBar ;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Community' and contains(@resource-id,'com.jobget:id/smallLabel')]")
-	public WebElement communityButtonInNavBar ;
+	public AndroidElement communityButtonInNavBar ;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Extra Income' and contains(@resource-id,'com.jobget:id/smallLabel1')]")
-	public WebElement extraIncomeButtonInNavBar ;
+	public AndroidElement extraIncomeButtonInNavBar ;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Messages' and contains(@resource-id,'com.jobget:id/smallLabel')]")
-	public WebElement messagesButtonInNavBar ;
+	public AndroidElement messagesButtonInNavBar ;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Profile' and contains(@resource-id,'com.jobget:id/smallLabel')]")
-	public WebElement profileButtonInNavBar ;
+	public AndroidElement profileButtonInNavBar ;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@text='Profile' and contains(@resource-id,'com.jobget:id/smallLabel')]")
-	public WebElement jobSearch ;
+	public AndroidElement jobSearch ;
 	
 	@AndroidFindBy(xpath="//*[@resource-id='com.jobget:id/tv_search_tutorial_ok']")
-	public WebElement CoachmarkOKButton ;
+	public AndroidElement CoachmarkOKButton ;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(text(), 'Test') and contains(text(), 'job') and contains(text(), '123124')]")
+	public AndroidElement findJob ;
+	
+	@AndroidFindBy(xpath="//android.widget.ImageView[@resource-id='com.jobget:id/iv_cross_home']")
+	public AndroidElement crossButtonProfileNavTour ;
+	
+	
+	
 	
 	
 	

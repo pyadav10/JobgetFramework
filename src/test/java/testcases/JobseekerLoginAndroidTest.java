@@ -30,6 +30,7 @@ public class JobseekerLoginAndroidTest extends Base {
 	LoginPage act2 ;
 	HomePage hm;
 	AndroidDriver<AndroidElement> tc;
+	Boolean ElementPresent =false;
 	
   @Test()
   public void LoginRegUser() throws InterruptedException {
@@ -37,13 +38,15 @@ public class JobseekerLoginAndroidTest extends Base {
 		act1.loginButton.click();
 		
 		System.out.println("Testcase starts");
-		act2.email.sendKeys("user1april@yopmail.com");
+		act2.email.sendKeys("test05april@yopmail.com");
 		act2.password.sendKeys("123456");
 		act2.loginButton.click();
 		
 		
 		
 		Thread.sleep(10000);
+		
+		hm.crossButtonProfileNavTour.click();
 
 		hm.profileButtonInNavBar.click();	
 		hm.CoachmarkOKButton.click();
@@ -54,14 +57,24 @@ public class JobseekerLoginAndroidTest extends Base {
 		//tc.scrollTo
 		
 		
+ElementPresent =hm.findJob.isDisplayed();
 		
-		 TouchAction swipe = new TouchAction(tc)
-	              .press(PointOption.point(540,1824))
-	              .waitAction(waitOptions(ofMillis(800)))
-	              .moveTo(PointOption.point(540,672))
-	              .release()
-	              .perform();
 		
+		for(int i=0;i>10;i++) {
+			
+			 TouchAction swipe = new TouchAction(tc)
+		              .press(PointOption.point(540,1824))
+		              .waitAction(waitOptions(ofMillis(800)))
+		              .moveTo(PointOption.point(540,672))
+		              .release()
+		              .perform();
+			 
+			 if (ElementPresent) {
+				 break;
+			 }
+			
+			
+		}
 		 
 		 System.out.println("Test ends");
 
